@@ -1,4 +1,4 @@
-module github.com/nugroholesmana/golang-restfull/v1
+module github.com/nugroholesmana/golang-restfull
 
 go 1.15
 

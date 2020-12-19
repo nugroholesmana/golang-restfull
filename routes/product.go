@@ -3,9 +3,9 @@ package routes
 import (
 	"errors"
 
-	"../config"
-	"../models"
 	"github.com/gin-gonic/gin"
+	"github.com/nugroholesmana/golang-restfull/config"
+	"github.com/nugroholesmana/golang-restfull/models"
 	"gorm.io/gorm"
 )
 

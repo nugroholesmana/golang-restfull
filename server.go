@@ -1,9 +1,9 @@
 package main
 
 import (
-	"./config"
-	"./routes"
 	"github.com/gin-gonic/gin"
+	"github.com/nugroholesmana/golang-restfull/config"
+	"github.com/nugroholesmana/golang-restfull/routes"
 )
 
 func main() {
