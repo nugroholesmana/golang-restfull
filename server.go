@@ -8,7 +8,6 @@ import (
 
 func main() {
 	config.InitDB()
-	defer config.DB.Close()
 
 	server := gin.Default()
 
@@ -16,5 +15,5 @@ func main() {
 	go server.GET("/product/:id", routes.GetProduct)
 	go server.POST("/article", routes.PostProduct)
 
-	server.Run(":8000")
+	server.Run("")
 }

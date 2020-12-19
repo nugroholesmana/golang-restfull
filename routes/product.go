@@ -1,11 +1,15 @@
 package routes
 
 import (
+	"errors"
+
 	"../config"
 	"../models"
 	"github.com/gin-gonic/gin"
+	"gorm.io/gorm"
 )
 
+// GetHome Fungsi halaman utama dari home
 func GetHome(ctx *gin.Context) {
 	items := []models.Product{}
 	config.DB.Find(&items)
@@ -15,12 +19,16 @@ func GetHome(ctx *gin.Context) {
 		"data":    items,
 	})
 }
+
+// GetProduct untuk mengambil satu product
 func GetProduct(ctx *gin.Context) {
 	productID := ctx.Param("id")
 
 	var item models.Product
 
-	if config.DB.First(&item, "id = ?", productID).RecordNotFound() {
+	result := config.DB.First(&item, "id = ?", productID)
+
+	if errors.Is(result.Error, gorm.ErrRecordNotFound) {
 		ctx.JSON(404, gin.H{
 			"status": "error",
 			"msg":    "Record not found",
@@ -36,6 +44,7 @@ func GetProduct(ctx *gin.Context) {
 	})
 }
 
+// PostProduct untuk insert data product
 func PostProduct(ctx *gin.Context) {
 	title := ctx.PostForm("title")
 	ctx.JSON(200, gin.H{
