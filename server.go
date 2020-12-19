@@ -15,5 +15,5 @@ func main() {
 	go server.GET("/product/:id", routes.GetProduct)
 	go server.POST("/article", routes.PostProduct)
 
-	server.Run("")
+	server.Run(":8000")
 }
