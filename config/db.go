@@ -1,7 +1,7 @@
 package config
 
 import (
-	"github.com/nugroholesmana/golang-restfull/models"
+	"github.com/nugroholesmana/golang-restfull/tree/develop/models"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"

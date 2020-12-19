@@ -4,8 +4,8 @@ import (
 	"errors"
 
 	"github.com/gin-gonic/gin"
-	"github.com/nugroholesmana/golang-restfull/config"
-	"github.com/nugroholesmana/golang-restfull/models"
+	"github.com/nugroholesmana/golang-restfull/tree/develop/config"
+	"github.com/nugroholesmana/golang-restfull/tree/develop/models"
 	"gorm.io/gorm"
 )
 
